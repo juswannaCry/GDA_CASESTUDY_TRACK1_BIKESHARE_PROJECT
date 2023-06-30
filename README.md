@@ -98,6 +98,8 @@ Performed data aggregation using R Programming.
 
 ## PHASE 5: Share
 Tableu is used for data visualization and presenting key insights.
+Dashboards:[link](https://github.com/juswannaCry/GDA_CASESTUDY_TRACK1_BIKESHARE_PROJECT/tree/main/Visualization)
+Click here for the final Viz [link](https://github.com/juswannaCry/GDA_CASESTUDY_TRACK1_BIKESHARE_PROJECT/blob/main/Visualization/Case%20Study.pdf)
 
 ## PHASE 6: Act
 After analizing, we reached to the following conclusion:
