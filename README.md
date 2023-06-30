@@ -54,7 +54,7 @@ ROCCC approach is used to determine the credibility of the data
 Before we start analyzing, it is necessary to make sure data is clean, free of error and in the right format.
 ### **Tasks:**
 
-**1. Tools:**: R Programming is used for its ability to handle huge datasets efficiently. Microsoft Excel is used for further analysis and visualization. 
+**1. Tools:** R Programming is used for its ability to handle huge datasets efficiently. Microsoft Excel is used for further analysis and visualization. 
 
 **2. Organize**: from the cleaned/combined CSV.
                       
@@ -98,7 +98,9 @@ Performed data aggregation using R Programming.
 
 ## PHASE 5: Share
 Tableu is used for data visualization and presenting key insights.
+
 Dashboards:[link](https://github.com/juswannaCry/GDA_CASESTUDY_TRACK1_BIKESHARE_PROJECT/tree/main/Visualization)
+
 Click here for the final Viz [link](https://github.com/juswannaCry/GDA_CASESTUDY_TRACK1_BIKESHARE_PROJECT/blob/main/Visualization/Case%20Study.pdf)
 
 ## PHASE 6: Act
