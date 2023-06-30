@@ -125,14 +125,6 @@ during the summer months.
 
 CONCLUSTION: 
 
-BY IMPLEMENTING THESE
-RECOMMENDATIONS, CYCLISTIC CAN
-CAPITALIZE ON THE HIGHER
-ENGAGEMENT OF CASUAL RIDERS DURING
-WEEKENDS AND SUMMER, ATTRACT MORE
-USERS, AND POTENTIALLY CONVERT
-THEM INTO ANNUAL MEMBERS, LEADING
-TO INCREASED REVENUE AND LONG-TERM
-GROWTH.
+By implementing these recommendations, Cyclistic can capitalize on the higher engagement of casual riders during weekends and summer, attract more users, and potentially convert them into annual members, leading to increased revenue and long-term growth.
 
 
