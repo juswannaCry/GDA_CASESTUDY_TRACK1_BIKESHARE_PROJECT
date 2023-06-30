@@ -1,0 +1,40 @@
+# Load Packages
+library(readr)
+library(tidyverse)
+library(dplyr)
+library(lubridate)
+library(skimr)
+library(janitor)
+
+# Add clean csv.
+
+# Sort days of the week
+df$day_of_week <- ordered(df$day_of_week, levels=c("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"))
+
+# EXPORT
+# Total and Average number of weekly rides by rider type
+summary_wd <- df %>% 
+  mutate(weekday = wday(started_at, label = TRUE)) %>%  
+  group_by(member_casual, weekday) %>%  
+  summarise(number_of_rides = n()
+            ,average_duration = mean(ride_length)) %>%    
+  arrange(member_casual, weekday)
+write_csv(summary_wd, "summary_ride_length_weekday.csv")
+
+# Total and Average number of monthly rides by rider type
+summary_month <- df %>% 
+  mutate(month = month(started_at, label = TRUE)) %>%  
+  group_by(month,member_casual) %>%  
+  summarise(number_of_rides = n()
+            ,average_duration = mean(ride_length)) %>%    
+  arrange(month, member_casual)
+write_csv(summary_month, "summary_ride_length_month.csv")
+
+# Stations most used by each user group
+summary_station <- df %>% 
+  mutate(station = start_station_name) %>%
+  drop_na(start_station_name) %>% 
+  group_by(start_station_name, member_casual) %>%  
+  summarise(number_of_rides = n()) %>%    
+  arrange(number_of_rides)
+write_csv(summary_station, "summary_stations.csv")
