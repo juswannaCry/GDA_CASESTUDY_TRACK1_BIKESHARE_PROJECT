@@ -97,7 +97,7 @@ Before we start analyzing, it is necessary to make sure data is clean, free of e
 Performed data aggregation using R Programming.
 
 ## PHASE 5: Share
-Microsoft PowerPoint is used for data visualization and presenting key insights.
+Tableu is used for data visualization and presenting key insights.
 
 ## PHASE 6: Act
 After analizing, we reached to the following conclusion:
