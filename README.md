@@ -53,58 +53,89 @@ A quick filtering and checking data for completeness shows that “start station
 This limitation could slightly affect our analysis for finding stations where most electric-bikes are taken but we can use “end station names” to locate our customers and this can be used for further analysis and potential marketing campaigns.
 <![endif]-->
 
-## **PHASE 3: Process**
-
-Before we start analyzing, it is necessary to make sure data is clean, free of error and in the right format.
-### **Tasks:**
 
 ## **PHASE 3: Process**
 
 Before we start analyzing, it is necessary to make sure data is clean, free of error and in the right format.
 ### **Tasks:**
 
-Tools: R Programming is used for its ability to handle huge datasets efficiently. Microsoft Excel is used for further analysis and visualization. 
+**1. Tools:**: R Programming is used for its ability to handle huge datasets efficiently. Microsoft Excel is used for further analysis and visualization. 
 
-# Load Packages
-library(readr)
-library(tidyverse)
-library(dplyr)
-library(lubridate)
-library(skimr)
-library(janitor)
+**2. Organize**: from the cleaned/combined CSV.
+                      
+    >df$day_of_week <- ordered(df$day_of_week, levels=c("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"))
 
-**Preparing for analysis**
 
-# upload clean csv.
+**3. Sampling**: The cleaned/combined data is only 2021-2022
 
-# Sort days of the week
-df$day_of_week <- ordered(df$day_of_week, levels=c("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"))
+**4. Preparing for analysis**
 
-# EXPORT
-# Total and Average number of weekly rides by rider type
-summary_wd <- df %>% 
-  mutate(weekday = wday(started_at, label = TRUE)) %>%  
-  group_by(member_casual, weekday) %>%  
-  summarise(number_of_rides = n()
-            ,average_duration = mean(ride_length)) %>%    
-  arrange(member_casual, weekday)
-write_csv(summary_wd, "summary_ride_length_weekday.csv")
+      ##Total and Average number of weekly rides by rider type
+    summary_wd <- df %>%
+     mutate(weekday = wday(started_at, label = TRUE)) %>% 
+     group_by(member_casual, weekday) %>%
+     summarise(number_of_rides = n()
+               ,average_duration = mean(ride_length)) %>%
+     arrange(member_casual, weekday)  
+    write_csv(summary_wd, "summary_ride_length_weekday.csv")
 
-# Total and Average number of monthly rides by rider type
-summary_month <- df %>% 
-  mutate(month = month(started_at, label = TRUE)) %>%  
-  group_by(month,member_casual) %>%  
-  summarise(number_of_rides = n()
-            ,average_duration = mean(ride_length)) %>%    
-  arrange(month, member_casual)
-write_csv(summary_month, "summary_ride_length_month.csv")
 
-# Stations most used by each user group
-summary_station <- df %>% 
-  mutate(station = start_station_name) %>%
-  drop_na(start_station_name) %>% 
-  group_by(start_station_name, member_casual) %>%  
-  summarise(number_of_rides = n()) %>%    
-  arrange(number_of_rides)
-write_csv(summary_station, "summary_stations.csv")
+    ##Total and Average number of monthly rides by rider type
+    summary_month <- df %>% 
+     mutate(month = month(started_at, label = TRUE)) %>%  
+     group_by(month,member_casual) %>%  
+     summarise(number_of_rides = n()
+               ,average_duration = mean(ride_length)) %>%    
+     arrange(month, member_casual)
+    write_csv(summary_month, "summary_ride_length_month.csv")
+
+    ##Stations most used by each user group
+    summary_station <- df %>% 
+     mutate(station = start_station_name) %>%
+     drop_na(start_station_name) %>% 
+     group_by(start_station_name, member_casual) %>%  
+     summarise(number_of_rides = n()) %>%    
+     arrange(number_of_rides)
+    write_csv(summary_station, "summary_stations.csv")
+
+  ## PHASE 4: Analyzing Data
+Performed data aggregation using R Programming.
+
+## PHASE 5: Share
+Microsoft PowerPoint is used for data visualization and presenting key insights.
+
+## PHASE 6: Act
+After analizing, we reached to the following conclusion:
+
+RECOMMENDATION
+Weekend-Specific Promotions: Design targeted marketing campaigns that highlight the
+convenience and flexibility of Cyclistic bikes for weekend activities. Offer special
+discounts, promotions, or incentives for casual riders to use the bikes on weekends.
+Emphasize the ease of exploring the city, leisurely rides, and weekend events as part of
+the messaging.
+
+Trial Period Offer: Introduce a trial period offer where casual riders can experience the
+benefits of an annual membership for a limited time. Provide them with a discounted
+rate or additional benefits during this trial period to encourage them to fully
+experience the advantages of being a member.
+
+Seasonal Marketing Campaigns: Develop seasonal marketing campaigns that align with
+the increased usage of casual riders during the summer. Leverage the appeal of warm
+weather and outdoor activities to position Cyclistic as the preferred mode of
+transportation. Collaborate with local events, festivals, and tourist attractions to
+create partnerships and cross-promotions that highlight the benefits of bike sharing
+during the summer months.
+
+CONCLUSTION: 
+
+BY IMPLEMENTING THESE
+RECOMMENDATIONS, CYCLISTIC CAN
+CAPITALIZE ON THE HIGHER
+ENGAGEMENT OF CASUAL RIDERS DURING
+WEEKENDS AND SUMMER, ATTRACT MORE
+USERS, AND POTENTIALLY CONVERT
+THEM INTO ANNUAL MEMBERS, LEADING
+TO INCREASED REVENUE AND LONG-TERM
+GROWTH.
+
 
