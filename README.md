@@ -48,11 +48,6 @@ ROCCC approach is used to determine the credibility of the data
 -   **C**ited - The data is cited and is available under Data License Agreement.
 -   **Data Limitation**
 
-A quick filtering and checking data for completeness shows that “start station name and ID” and “end station name and ID” for some rides are missing. Further observations suggest that the most missing data about “start station name” belongs to “electric bikes” as 201,975 out of 888,490 electric ride shares have missing data and it accounts for 22% of total electric-bike ride shares.
-
-This limitation could slightly affect our analysis for finding stations where most electric-bikes are taken but we can use “end station names” to locate our customers and this can be used for further analysis and potential marketing campaigns.
-<![endif]-->
-
 
 ## **PHASE 3: Process**
 
